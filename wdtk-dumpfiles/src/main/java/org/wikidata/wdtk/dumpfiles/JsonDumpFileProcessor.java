@@ -154,6 +154,7 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 				inputStream));
 
 		String line = br.readLine();
+		br.close();
 		if (line == null) { // can happen if iterator already has consumed all
 							// the stream
 			return;
@@ -185,6 +186,5 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 
 			line = br.readLine();
 		}
-		br.close();
 	}
 }
