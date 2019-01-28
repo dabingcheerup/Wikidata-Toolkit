@@ -153,8 +153,8 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				inputStream));
 
-		String line = br.readLine();
 		br.close();
+		String line = br.readLine();
 		if (line == null) { // can happen if iterator already has consumed all
 							// the stream
 			return;
