@@ -185,5 +185,6 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 
 			line = br.readLine();
 		}
+		br.close();
 	}
 }
