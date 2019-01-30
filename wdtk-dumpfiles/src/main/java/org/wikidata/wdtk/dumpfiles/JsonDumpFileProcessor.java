@@ -90,7 +90,11 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 				documentIterator.close();
 			} catch (JsonProcessingException e) {
 				logJsonProcessingException(e);
-				processDumpFileContentsRecovery(inputStream);
+				BufferedReader br = new BufferedReader(new InputStreamReader(
+				inputStream));
+				String line = br.readLine();
+				System.out.println(line);
+				//processDumpFileContentsRecovery(inputStream);
 			}
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read JSON input: "
@@ -153,7 +157,6 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				inputStream));
 
-		br.close();
 		String line = br.readLine();
 		if (line == null) { // can happen if iterator already has consumed all
 							// the stream
