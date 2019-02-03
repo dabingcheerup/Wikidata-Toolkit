@@ -90,10 +90,6 @@ public class JsonDumpFileProcessor implements MwDumpFileProcessor {
 				documentIterator.close();
 			} catch (JsonProcessingException e) {
 				logJsonProcessingException(e);
-				BufferedReader br = new BufferedReader(new InputStreamReader(
-				inputStream));
-				String line = br.readLine();
-				System.out.println(line);
 				//processDumpFileContentsRecovery(inputStream);
 			}
 		} catch (IOException e) {
